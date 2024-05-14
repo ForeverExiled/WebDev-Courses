@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Closing tags can be omitted, but it's a bad practice -->
+    <!-- Non-replaced elements; they include content and other elements -->
+    <h1>Machine Learning Workshop</h1>
+    <ul>
+        <li>Blendan Smooth</li>
+        <li>Hoover Sukhdeep</li>
+        <li>Toasty McToastface</li>
+    </ul>
+
+    <!-- Replaced [by objects, here -- by graphical user interface and an image] elements -->
+    <!-- Being also void elements, they don't have closing tag,
+        but may have omittable 'closing' slash -->
+    <input type="range"/> <!-- closed with the forward slash -->
+
+    <!--
+        Best practices are:
+            1. Marking up HTML using lowercase letters for all element/attribute names within tags;
+            2. Quote all attribute values.
+    -->
+    
+    <a href="https://www.svgrepo.com/svg/128969/switch">
+        <!-- 'ismap' attribute means an image is a server-side image map;
+            click on it sends click coordinates as a URL query string (here: <href_link>/switch?<x, y>) -->
+        <img src="/HTMLCourse/assets/switch.svg" alt="light switch" ismap> <!-- Also works fine without the 'closing' slash -->
+    </a>
+
+    <!-- Internal anchor link -->
+    <a href="#register" target="_self">Registration</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="register">
+        <p>
+            Did you follow an internal anchor link?
+        </p>
+    </div>
+</body>
+</html>
