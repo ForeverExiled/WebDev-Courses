@@ -1,9 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- tells browsers to use full-standard mode, rather than quirks mode: https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode -->
+<html lang="en"> <!-- enables screen readers, search engines, and translation services to know the document language -->
 <head>
+    <!-- charset, viewport and title must ALWAYS be included -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Machine Learning Workshop</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/HTMLCourse/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/HTMLCourse/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/site.webmanifest">
+
+    <!-- 'alternate' can be used for translated versions of the site -->
+    <link rel="alternate" href="http://127.0.0.1:5500/HTMLCourse/fr" hreflang="fr-FR">
+    <link rel="alternate" href="http://127.0.0.1:5500/HTMLCourse/pt" hreflang="pt-BR">
+
+    <!-- it also can be used for different types of the page, for example, for PDF-version -->
+    <link rel="alternate" type="application/x-pdf" href="http://127.0.0.1:5500/HTMLCourse/index.pdf">
+
+    <!-- if alternate versions of the site exist, the 'true' one can be identified by using canonical value for rel attribute
+        and providing a canonical URL for href-->
+    <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
 </head>
 <body>
     <!-- Closing tags can be omitted, but it's a bad practice -->
@@ -26,42 +42,20 @@
             2. Quote all attribute values.
     -->
     
-    <a href="https://www.svgrepo.com/svg/128969/switch">
-        <!-- 'ismap' attribute means an image is a server-side image map;
-            click on it sends click coordinates as a URL query string (here: <href_link>/switch?<x, y>) -->
-        <img src="/HTMLCourse/assets/switch.svg" alt="light switch" ismap> <!-- Also works fine without the 'closing' slash -->
-    </a>
-
     <!-- Internal anchor link -->
     <a href="#register" target="_self">Registration</a>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <a href="https://www.svgrepo.com/svg/128969/switch">
+        <!-- 'ismap' attribute means an image is a server-side image map;
+            click on it sends click coordinates as a URL query string (here: <href_link>/switch?<x, y>) -->
+        <img src="/HTMLCourse/assets/images/switch.svg" alt="light switch" ismap> <!-- Also works fine without the 'closing' slash -->
+    </a>
     <div id="register">
         <p>
             Did you follow an internal anchor link?
         </p>
     </div>
+
+    <!-- <script defer src="scripts/lightswitch.js"></script> -->
 </body>
 </html>
