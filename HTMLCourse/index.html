@@ -57,14 +57,14 @@
     <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
 </head>
 <body>
-    <!-- using divs with ids and comments which indicate roles of the divs creates extra work to make css apply styles correctly. So, it's definitely not a good practice -->
+    <!-- <role> attribute could be used to make search engines and accessive technologies to correctly parse document's AOM, although the comments which identify which <div> each </div> closes -->
     <!-- start header -->
-    <div id="pageHeader">
-        <div id="title">
+    <div role="banner">
+        <div role="heading" aria-level="1">
             Machine Learning Workshop
         </div>
         <!-- navigation -->
-        <div id="navigation">
+        <div role="navigation">
             <a href="#reg">Register</a>
             <a href="#about">About</a>
             <a href="#teachers">Instructors</a>
