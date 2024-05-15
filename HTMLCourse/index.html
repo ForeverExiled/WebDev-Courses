@@ -59,7 +59,12 @@
 <body>
     <header>
         <h1>Machine Learning Workshop</h1>
-        <nav></nav>
+        <nav>
+            <a href="#reg">Register</a>
+            <a href="#about">About</a>
+            <a href="#teachers">Instructors</a>
+            <a href="#feedback">Testimonials</a>
+        </nav>
     </header>
     <main>
         <header>
@@ -82,11 +87,60 @@
         <section id="feedback">
             <h2>What it's like to learn good and do other stuff good too</h2>
         </section>
+
+        <img src="assets/images/switch.svg" alt="light switch" id="switch" class="light">
+
+        <!-- some attribute values are case-insensitive: the following lines are the same -->
+        <input type="text">
+        <input type="TeXt">
+        <!-- while others, like id, are case-sensitive: the following lines are not equal -->
+        <div id="myId"></div>
+        <div id="MyID"></div>
+
+        <!-- boolean attributes don't need a value; they evaluate to true -->
+        <textarea name="textarea1" id="textarea1" readonly></textarea>
+        
+        <!-- enumerated attributes have a defined set of valid values -->
+        <input type="radio" name="radiobutton1" id="radiobutton1" inputmode="url">
+
+        <!-- tabindex is used to tell browsers that form controls, links, buttons and content editable elements are able to receive focus by pressing tab key -->
+        <!-- tabindex value of -1 makes an element able to receive focus, but doesn't add the element to the tabbing sequence -->
+        <!-- tabindex value of 0 make an element fosucable and reachable via tabbing, adding it to the default tab order of the page in source code order -->
+        <!-- tabindex value of 1 or more gives an element priority when using tab key. Resulting order is: [1 -> 2 -> ... -> n -> 0 -> 0 -> ...] -->
+        <p>Click in any input, then hit the tab key.</p>
+        <ol>
+            <li><input tabindex="3" value="3"></li>
+            <li><input tabindex="6" value="6"></li>
+            <li><input tabindex="2" value="2"></li>
+            <li><input tabindex="0" value="0"></li>
+            <li><input tabindex="0" value="0"></li>
+            <li><input tabindex="-1" value="-1"></li>
+            <li><input tabindex="0" value="0"></li>
+            <li><input tabindex="1" value="1"></li>
+            <li><input tabindex="5" value="5"></li>
+            <li><input tabindex="4" value="4"></li>
+        </ol>
+
+        <!-- contenteditable attribute makes an element editable, focusable and reachable by pressing tab as if it were assigned a tabindex="0" -->
+        <!-- contenteditable is an enumerable attribute which defaults to 'inherited' -->
+        <label>
+            11. <input value="11" contenteditable>
+            12. <input value="12" contenteditable="true">
+        </label>
+
+        <!-- custom attributes are created by adding an attribute with a custom name prefixed with "data-" -->
+        <!-- [refer to 'scripts/lightswitch.js' for more info] -->
+        <blockquote data-machine-learning="workshop"
+            data-first-name="Blendan" data-last-name="Smooth"
+            data-formerly="Margarita Maker" data-aspiring="Load Balancer"
+            data-year-graduated="2022">
+            Hal and EVE could teach a fan to blow hot air.
+        </blockquote>
     </main>
     <footer>
         <h2>Delivering accessible, performant, standards-compliant websites since 1999.</h2>
     </footer>
-    
-    <!-- <script defer src="scripts/lightswitch.js"></script> -->
+
+    <script defer src="scripts/lightswitch.js"></script>
 </body>
 </html>
