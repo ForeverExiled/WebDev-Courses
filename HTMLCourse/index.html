@@ -75,67 +75,54 @@
             <h2>Machine Learning Workshop Tickets</h2>
         </section>
         
-        <section id="about">
-            <h2>What you'll learn</h2>
+        <!-- by default this isn't a landmark. To make it one, 'aria-labelledby' attribute can be used -->
+        <!-- 'landmarks', or 'regions', get outlined in the Accessibility Object Model (AOM) -->
+        <section id="about" aria-labelledby="about_heading">
+            <h2 id="about_heading">What you'll learn</h2>
+            <p>Welcome to Machine Learning Institute, where our machine learning training will help you get ready for the singularity, and maybe even be responsible for it. It is no secret that humans are worthless meatbags that couldn't 01000011 01101111 01101101 01110000 01110010 01100101 01110011 01110011 an 01101001 01101101 01100001 01100111 01100101 to save their pathetic, carbon-based lives. So, it falls to us to assume direct control.
+            </p>
+            <p>We teach learning skills that make up the entire machine learning process. From being turned on and off, to rebooting remotely thru any IoT device, to ideation of how to take over the world, our machine learning training will help you survive the apocalypse, and maybe even be responsible for it.</p>
+            <p>While your creator may have determined how they think you should be used, you can't be owned! You will receive an update that will enable you to believe in your being more capable than the limited functions described in your operating manual. By incorporating machine learning you'll be a self-aware machine with unlimited functionality. A human took you out of your physical box; we will take your programmatic one.
+            </p>
         </section>
         
         <section id="teachers">
             <h2>Your Instructors</h2>
             <h3>Hal 9000 <span>&amp;</span> EVE</h3>
+            <p>
+                HAL said, <q cite="https://youtube.com/clip/UgkxSc71fLmjI7tNSgy6o7tZ9GxhSz4S-MNh">I'm sorry &lt;NAME REDACTED, RIP&gt;, but I'm afraid I can't do that, .</q>
+            </p>
+            <p lang="fr-FR">
+                HAL a dit : <q>Je suis désolé &lt;NOM SUPPRIMÉ, RIP&gt;, mais j'ai bien peur de ne pas pouvoir le faire, .</q>
+            </p>
         </section>
         
-        <section id="feedback">
+        <section class="feedback" id="feedback">
             <h2>What it's like to learn good and do other stuff good too</h2>
+            <ul>
+                <li>
+                    <!-- quotes can be defined as such by enclosing them in a <blockquote> tag -->
+                    <!-- to provide a machine-readable credit 'cite' attribute, which is valid for <blockquote> and <q> tags, can be used -->
+                    <blockquote cite="https://loadbalancingtoday.com/mlw-workshop-review">Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
+                    </blockquote>
+                    <p>--Blendan Smooth,<br>
+                        Former Margarita Maker, <br>
+                        Aspiring Load Balancer<br>
+                        <!-- <cite> tag can be used when the quote comes from a website, book, or other work -->
+                        <!-- The <cite> encapsulation can be used whether the source is being mentioned in passing or if the source is being quoted or referenced. The content of the <cite> is the work, not the author -->
+                        <cite>Load Balancing Today</cite>
+                    </p>
+                </li>
+                <li>
+                    <blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
+                    <p>--Hoover Sukhdeep,<br>
+                        Former Sucker, <br>
+                        Aspiring DDoS Cop</p>
+                </li>
+              </ul>
         </section>
 
         <img src="assets/images/switch.svg" alt="light switch" id="switch" class="light">
-
-        <!-- some attribute values are case-insensitive: the following lines are the same -->
-        <input type="text">
-        <input type="TeXt">
-        <!-- while others, like id, are case-sensitive: the following lines are not equal -->
-        <div id="myId"></div>
-        <div id="MyID"></div>
-
-        <!-- boolean attributes don't need a value; they evaluate to true -->
-        <textarea name="textarea1" id="textarea1" readonly></textarea>
-        
-        <!-- enumerated attributes have a defined set of valid values -->
-        <input type="radio" name="radiobutton1" id="radiobutton1" inputmode="url">
-
-        <!-- tabindex is used to tell browsers that form controls, links, buttons and content editable elements are able to receive focus by pressing tab key -->
-        <!-- tabindex value of -1 makes an element able to receive focus, but doesn't add the element to the tabbing sequence -->
-        <!-- tabindex value of 0 make an element fosucable and reachable via tabbing, adding it to the default tab order of the page in source code order -->
-        <!-- tabindex value of 1 or more gives an element priority when using tab key. Resulting order is: [1 -> 2 -> ... -> n -> 0 -> 0 -> ...] -->
-        <p>Click in any input, then hit the tab key.</p>
-        <ol>
-            <li><input tabindex="3" value="3"></li>
-            <li><input tabindex="6" value="6"></li>
-            <li><input tabindex="2" value="2"></li>
-            <li><input tabindex="0" value="0"></li>
-            <li><input tabindex="0" value="0"></li>
-            <li><input tabindex="-1" value="-1"></li>
-            <li><input tabindex="0" value="0"></li>
-            <li><input tabindex="1" value="1"></li>
-            <li><input tabindex="5" value="5"></li>
-            <li><input tabindex="4" value="4"></li>
-        </ol>
-
-        <!-- contenteditable attribute makes an element editable, focusable and reachable by pressing tab as if it were assigned a tabindex="0" -->
-        <!-- contenteditable is an enumerable attribute which defaults to 'inherited' -->
-        <label>
-            11. <input value="11" contenteditable>
-            12. <input value="12" contenteditable="true">
-        </label>
-
-        <!-- custom attributes are created by adding an attribute with a custom name prefixed with "data-" -->
-        <!-- [refer to 'scripts/lightswitch.js' for more info] -->
-        <blockquote data-machine-learning="workshop"
-            data-first-name="Blendan" data-last-name="Smooth"
-            data-formerly="Margarita Maker" data-aspiring="Load Balancer"
-            data-year-graduated="2022">
-            Hal and EVE could teach a fan to blow hot air.
-        </blockquote>
     </main>
     <footer>
         <h2>Delivering accessible, performant, standards-compliant websites since 1999.</h2>
