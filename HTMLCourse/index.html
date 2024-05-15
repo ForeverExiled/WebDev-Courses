@@ -57,43 +57,21 @@
     <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
 </head>
 <body>
-    <!-- Closing tags can be omitted, but it's a bad practice -->
-    <!-- Non-replaced elements; they include content and other elements -->
-    <h1>Machine Learning Workshop</h1>
-    <ul>
-        <li>Blendan Smooth</li>
-        <li>Hoover Sukhdeep</li>
-        <li>Toasty McToastface</li>
-    </ul>
-
-    <!-- Replaced [by objects, here -- by graphical user interface and an image] elements -->
-    <!-- Being also void elements, they don't have closing tag, but may have omittable 'closing' slash -->
-    <input type="range"/> <!-- closed with the forward slash -->
-
-    <!--
-        Best practices are:
-            1. Marking up HTML using lowercase letters for all element/attribute names within tags;
-            2. Quote all attribute values.
-    -->
-    
-    <!-- Internal anchor link -->
-    <a href="#register" target="_self">Registration</a>
-    <br>
-    <a href="https://www.svgrepo.com/svg/128969/switch">
-        <!-- 'ismap' attribute means an image is a server-side image map; click on it sends click coordinates as a URL query string (here: <href_link>/switch?<x, y>) -->
-        <img src="/HTMLCourse/assets/images/switch.svg" alt="light switch" ismap> <!-- Also works fine without the 'closing' slash -->
-    </a>
-    <div id="register">
-        <p>
-            Did you follow an internal anchor link?
-        </p>
+    <!-- start header -->
+    <div id="pageHeader">
+        <div id="title">
+            Machine Learning Workshop
+        </div>
+        <!-- navigation -->
+        <div id="navigation">
+            <a href="#reg">Register</a>
+            <a href="#about">About</a>
+            <a href="#teachers">Instructors</a>
+            <a href="#feedback">Testimonials</a>
+        </div>
+        <!-- end navigation bar -->
     </div>
-
-    <!-- div, span and some other elements are non-semantic, so their roles aren't specified in the Accessibility object model (AOM) of the document. Because of that some accessive devices, sush ac screen readers, can't correctly parse the document -->
-    <!-- By using <role> global (usable by any HTML element) attribute, the two following lines can be made semantically equal -->
-    <div role="banner"></div>
-    <header></header>
-    <!-- HTML elements must be chosen by their semantic value, not by how they are rendered to look; for the latter CSS is responsible -->
+    <!-- end of header -->
 
     <!-- <script defer src="scripts/lightswitch.js"></script> -->
 </body>
