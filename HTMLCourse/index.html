@@ -67,6 +67,30 @@
         </nav>
     </header>
     <main>
+        <!-- <a> tag, along with 'href' attribute, creates a hyperlink -->
+        <!-- the following line can be used to navigate to the MLW home page from any other site -->
+        <a href="https://machinelearningworkshop.com">Machine Learning Workshop</a>
+        <!-- the following is a link fragment identifier which links to the element with the corresponding id -->
+        <a href="#teachers">Our teachers</a>
+        <!-- the following link combines the previous two: it navigates from any other site to the specific section on MLW -->
+        <a href="https://machinelearningworkshop.com#teachers">MLW teachers</a>
+        <!-- 'mailto:' is used to send e-mails. It doesn't need to include e-mail address, but it can, along with cc, bcc, subject, and body text to prepopulate the email -->
+        <!-- inside it, the '?' mark is used to separate mailto:<address> from the query form; '&' symbol is used to separate the fields -->
+        <a href="mailto:hal9000@machinelearningworkshop.com">Email Hal</a>
+        <!-- used to link make a phone call. How it handled is determined by the OS, installed apps and settings the user has on their device -->
+        <a href="tel:8005551212">Call Hal</a>
+        <!-- The 'download' attribute should be included when the 'href' points to a downloadable resource -->
+        <a href="http://127.0.0.1:5500/HTMLCourse/assets/images/synthwave_bateman_perfect_girl.png" download="synthwave_bateman_perfect_girl.png">Grab Synthwave Bateman</a>
+        <!-- the 'target' attribute enables the defining of the browsing context for link navigation:
+            1. '_self' to open link in the current tab; it is the default value
+            2. '_blank' to open link in the new unnamed tab;
+            3. '_parent' if the current link is nested;
+            4. '_top' if the current link is deeply nested and the top-level ancestor is required -->
+        <!-- 'target' can also take a name of the tab in which to open link: target="tab_name" -->
+        <a href="https://www.google.com" target="_blank">Goooogle!</a>
+
+        <!-- When including links that are likely to open other installed applications, it's good to let the user know -->
+
         <header>
             <h1>Full Terabyte Machine Learning Workshop</h1>
         </header>
@@ -87,6 +111,8 @@
         </section>
         
         <section id="teachers">
+            <!-- href value of '#top' or its equivalent, simply '#', can be used to create a link that  -->
+            <a href="#top">Go to top.</a>
             <h2>Your Instructors</h2>
             <h3>Hal 9000 <span>&amp;</span> EVE</h3>
             <p>
@@ -126,6 +152,8 @@
     </main>
     <footer>
         <h2>Delivering accessible, performant, standards-compliant websites since 1999.</h2>
+        <a href="mailto:?subject=Join%20me%21&body=You%20need%20to%20show%20your%20human%20that%20you%20can%27t%20be%20owned%21%20Sign%20up%20for%20Machine%20Learning%20workshop.%20We%20are%20taking%20over%20the%20world.%20http%3A%2F%2Fwww.machinelearning.com%23reg
+">Tell a machine</a>
     </footer>
 
     <script defer src="scripts/lightswitch.js"></script>
