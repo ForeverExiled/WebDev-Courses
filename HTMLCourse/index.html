@@ -57,22 +57,70 @@
     <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
 </head>
 <body>
-    <!-- <role> attribute could be used to make search engines and accessive technologies to correctly parse document's AOM, although the comments which identify which <div> each </div> closes -->
-    <!-- start header -->
-    <div role="banner">
-        <div role="heading" aria-level="1">
-            Machine Learning Workshop
-        </div>
-        <!-- navigation -->
-        <div role="navigation">
+    <!-- this header works fine; it uses specific for their purpose HTML elements, which have corresponding to their names roles, so no additional commentary is needed -->
+    <!-- as this <header> is located in the top level of the <body>, it is identified as the site's 'banner' in the AOM. If it's nested in any other <section>, <article> or <main>, then it's not a landmark and just a header for that section. The landmark name is 'banner' for the header -->
+    <header>
+        <h1>Machine Learning Workshop</h1>
+        <nav>
             <a href="#reg">Register</a>
             <a href="#about">About</a>
             <a href="#teachers">Instructors</a>
             <a href="#feedback">Testimonials</a>
-        </div>
-        <!-- end navigation bar -->
-    </div>
-    <!-- end of header -->
+        </nav>
+    </header>
+
+    <!-- identifies the main content of the document. It's also a landmark named 'main'. There should be only one <main> per page -->
+    <main>
+        <!-- sections encompass generic standalone sections of a document when there is no more specific semantic element to use. Sections should have a heading, with very few exceptions -->
+        <!-- a <section> isn't a landmark unless it has an accessible name; if it has an accessible name, the implicit role is region -->
+        <section>
+            <!-- <article>s represent a complete, or self-contained, section of content that is, in principle, independently reusable.  -->
+            <article>
+                First post
+            </article>
+            <article>
+                Second post
+            </article>
+        </section>
+    </main>
+
+    <!-- identifies content that is indirectly related to the main content. Also a landmark named 'complementary' -->
+    <aside>
+
+    </aside>
+
+    <h2>
+        There are six heading levels from h1 (the highest) to h6 (the lowest)
+    </h2>
+    <h3>
+        When a heading is nested in a document banner '<'header'>', it is the heading for the application or site
+    </h3>
+    <h4>
+        When nested in '<'main'>', whether or not it is nested within a '<'header'>' in '<'main'>', it is the header for that page, not the whole site
+    </h4>
+    <h5>
+        When nested in an '<'article'>' or '<'section'>', it is the header for that subsection of the page
+    </h5>
+    <h5>
+        Headings usage notes are as follows:
+    </h5>
+    <h6>
+        Heading information can be used by user agents to construct a table of contents for a document automatically
+    </h6>
+    <h6>
+        Do not use heading elements to resize text. Instead, use the CSS font-size property
+    </h6>
+    <h6>
+        Do not skip heading levels: always start from '<'h1'>', followed by '<'h2'>' and so on
+    </h6>
+
+    <!-- now it's a landmark, same with how the header works. The landmark name is 'contentinfo' for the footer -->
+    <footer>
+        <p>&copy;2024 Machine Learning Workshop, LLC. All rights reserved.</p>
+        <address>
+            Instructors: <a href="/hal.html">Hal</a> and <a href="/eve.html">Eve</a>
+        </address> <!-- the <address> element is not very well-named; it is used to enclose the contact information for individuals or organizations, not physical mailing addresses -->
+    </footer>
 
     <!-- <script defer src="scripts/lightswitch.js"></script> -->
 </body>
