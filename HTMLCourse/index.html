@@ -53,8 +53,7 @@
     <!-- it also can be used for different types of the page, for example, for PDF-version -->
     <link rel="alternate" type="application/x-pdf" href="http://127.0.0.1:5500/HTMLCourse/index.pdf">
 
-    <!-- if alternate versions of the site exist, the 'true' one can be identified by using canonical value for rel attribute
-        and providing a canonical URL for href-->
+    <!-- if alternate versions of the site exist, the 'true' one can be identified by using canonical value for rel attribute and providing a canonical URL for href-->
     <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
 </head>
 <body>
@@ -68,8 +67,7 @@
     </ul>
 
     <!-- Replaced [by objects, here -- by graphical user interface and an image] elements -->
-    <!-- Being also void elements, they don't have closing tag,
-        but may have omittable 'closing' slash -->
+    <!-- Being also void elements, they don't have closing tag, but may have omittable 'closing' slash -->
     <input type="range"/> <!-- closed with the forward slash -->
 
     <!--
@@ -82,8 +80,7 @@
     <a href="#register" target="_self">Registration</a>
     <br>
     <a href="https://www.svgrepo.com/svg/128969/switch">
-        <!-- 'ismap' attribute means an image is a server-side image map;
-            click on it sends click coordinates as a URL query string (here: <href_link>/switch?<x, y>) -->
+        <!-- 'ismap' attribute means an image is a server-side image map; click on it sends click coordinates as a URL query string (here: <href_link>/switch?<x, y>) -->
         <img src="/HTMLCourse/assets/images/switch.svg" alt="light switch" ismap> <!-- Also works fine without the 'closing' slash -->
     </a>
     <div id="register">
@@ -91,6 +88,12 @@
             Did you follow an internal anchor link?
         </p>
     </div>
+
+    <!-- div, span and some other elements are non-semantic, so their roles aren't specified in the Accessibility object model (AOM) of the document. Because of that some accessive devices, sush ac screen readers, can't correctly parse the document -->
+    <!-- By using <role> global (usable by any HTML element) attribute, the two following lines can be made semantically equal -->
+    <div role="banner"></div>
+    <header></header>
+    <!-- HTML elements must be chosen by their semantic value, not by how they are rendered to look; for the latter CSS is responsible -->
 
     <!-- <script defer src="scripts/lightswitch.js"></script> -->
 </body>
