@@ -181,6 +181,102 @@
             <tfoot></tfoot>
         </table>
 
+        <!-- A <form> tag is used to fill out and send data, setting up the HTTP method -->
+        <!-- 'action' and 'method' attributes of a form define the URL that processes the data and the HTTP method used to submit the data, respectively -->
+        <!-- by default, the data is sent to the current page -->
+        <!-- form controls don't need to be physically nested in a <form>, as form controls outside the form can be associated with that form using 'form' attribute. However, this isn't advisable -->
+        <!-- Aside from GET and POST method there is DIALOG HTTP method which will close a <dialog> if the <form> element is nested within one, but the data is neither cleared nor submitted -->
+        <form action="" enctype="application/x-www-form-urlencoded">
+            <fieldset>
+                <legend>Who is your favorite student?</legend>
+                <ul>
+                    <li>
+                        <label>
+                            <!-- within a group of radio buttons, only one can be selected at a time, this is due to the name attribute -->
+                            <input type="radio" name="machine" value="blendan">
+                            Blendan Smooth
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <!-- to make a selecting one of the options in a radiobuttons group required for submittion, 'required' boolean attribute should be added to at least on of the radiobuttons in that group (which is formed by setting the same name) -->
+                            <input type="radio" name="machine" value="hoover" required>
+                            Hoover Sukhdeep
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="machine" value="toasty">
+                            Toasty McToastface
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <!-- <fieldset> should be provided with <legend>, like a form control with <label> -->
+                <legend>Check every option you associate yourself with!</legend>
+                <ul>
+                    <li>
+                        <label>
+                            <!-- it's valid for multiple checkboxes to have the same name; only the checked ones' name/value pairs will be sent when the form is submitted -->
+                            <!-- However, if they have the same name, the should have different values. Otherwise, the data sent will not be decipherable -->
+                            <!-- If a checkbox has no value, when it is submitted it's value will be set to 'on' -->
+                            <input type="checkbox" name="chk" value="on">
+                            Im'ma checkbox named chk
+                        </label>
+                        <!-- <label>s can be implicit; this disables style hooks for such labels -->
+                        <label>
+                            <!-- The 'required' attribute only affects a checkbox in which it is set -->
+                            <input type="checkbox" name="chk" required>
+                            Me too! Btw, I'm required to check, unlike you two guys
+                        </label>
+                        <!-- <label>s also can be explicit, which provides with more detailed styling options -->
+                        <label for="checkbox1">Why, though? I am the Love!</label>
+                        <input type="checkbox" name="checkbox1" id="checkbox1" value="love">
+                    </li>
+                </ul>
+            </fieldset>
+            <dialog open aria-labelledby="dialogid">
+                <form action="thankyou.php">
+                    <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
+                    <h2 id="dialogid">Application</h2>
+                    <p>All fields are required</p>
+                    <p>
+                        <label>
+                            Name:
+                            <input type="text" name="name" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Warranty:
+                            <input type="number" min="0" max="10" name="warranty" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Power sources:
+                            <select name="powersource">
+                                <option>AC/DC</option>
+                                <option>Battery</option>
+                                <option>Solar</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <button type="submit" formmethod="post">Submit</button>
+                    </p>
+                </form>
+            </dialog>
+            <!-- Submit button for a form can be created in two ways:
+                1. using <input>, where the value of the element is the text on the button, or
+                2. using <button>, where the text between the element's opening and closing tags is the text on the button -->
+            <!-- buttons with no name or value don't get sent with the form data on form submission, so if there's a need to know which button submitted the form, it has to have a name or value -->
+            <input type="submit" value="I'm an input!">
+            <!-- form attributes on submit button of a form take precedence over attributes of the form itself -->
+            <button type="submit" formenctype="multipart/form-data">I'm the genuine button element!</button>
+        </form>
+
         <header>
             <h1>Full Terabyte Machine Learning Workshop</h1>
         </header>
