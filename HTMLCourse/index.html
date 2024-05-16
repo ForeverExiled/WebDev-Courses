@@ -5,24 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Register for a machine learning workshop at our school for machines who can't learn good and want to do other stuff good too">
-    <meta name="robots" content="noindex, nofollow"> <!-- tells search engines to not index the site-->
-    <meta name="theme-color" content="#226daa"> <!-- defines a color to customize the browser interface: title bar, tab bar, or other chrome components -->
-
-    <!-- Open Graph meta tags describe how the card, which links to the website, is displayed on social media sites, like Twitter or Facebook -->
-    <meta property="og:title" content="Machine Learning Workshop">
-    <meta property="og:description" content="School for Machines Who Can't Learn Good and Want to Do Other Stuff Good Too">
-    <meta property="og:image" content="http://127.0.0.1:5500/HTMLCourse/assets/images/synthwave_bateman_perfect_girl.png">
-    <meta property="og:image:alt" content="Black and white line drawing of refrigerator, french door refrigerator, range, washer, fan, microwave, vaccuum, space heater and air conditioner">
-    
-    <!-- Social media, like Twitter, can have their own card markup syntax -->
-    <meta name="twitter:title" content="Machine Learning Workshop">
-    <meta name="twitter:description" content="School for machines who can't learn good and want to do other stuff good too">
-    <meta name="twitter:url" content="http://127.0.0.1:5500/?src=twitter">
-    <meta name="twitter:image:src" content="http://127.0.0.1:5500/HTMLCourse/assets/images/synthwave_bateman_perfect_girl.png">
-    <meta name="twitter:image:alt" content="27 different home appliances">
-    <meta name="twitter:creator" content="@estellevw">
-    <meta name="twitter:site" content="@perfmattersconf">
-    
     <title>Machine Learning Workshop</title>
 
     <!-- setting up cross-platform favicon using https://favicon.io -->
@@ -34,392 +16,43 @@
         the amount of meta tags in the <head> -->
     <link rel="manifest" href="assets/icons/site.webmanifest">
 
-    <!-- tells browsers to use the following images for apple touch home screen -->
-    <link rel="apple-touch-startup-image" href="assets/icons/apple-touch-icon.png" media="orientation: portrait">
-    <link rel="apple-touch-startup-image" href="assets/icons/apple-touch-icon.png" media="orientation: landscape">
-
-    <!-- tells browser that the site is web-app capable -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- name for mobile icon -->
-    <meta name="apple-mobile-web-app-title" content="MLW">
-    <meta name="application-name" content="MLW">
-
-    <!-- 'alternate' can be used for translated versions of the site -->
-    <link rel="alternate" href="http://127.0.0.1:5500/HTMLCourse/fr" hreflang="fr-FR">
-    <link rel="alternate" href="http://127.0.0.1:5500/HTMLCourse/pt" hreflang="pt-BR">
-
-    <!-- it also can be used for different types of the page, for example, for PDF-version -->
-    <link rel="alternate" type="application/x-pdf" href="http://127.0.0.1:5500/HTMLCourse/index.pdf">
-
-    <!-- if alternate versions of the site exist, the 'true' one can be identified by using canonical value for rel attribute and providing a canonical URL for href-->
-    <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Machine Learning Workshop</h1>
-        <!-- This is a table of contents; the links are used to 'skip' to the desired section of the current page and to tell the user what is on this page -->
-        <!-- <nav> element has the 'navigation' landmark -->
-        <nav aria-labelledby="tocTitle">
-            <!-- visible text can be referenced to label an element. Visible text gets translated by translation services, whereas attributes may not -->
-            <p id="tocTitle">On this page</p>
-            <ul role="list">
-                <li>
-                    <a href="#reg">Register</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#teachers">Instructors</a>
-                </li>
-                <li>
-                    <a href="#feedback">Testimonials</a>
-                </li>
-                <li>
-                    <a href="#students">Aspiring Robots</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- another type of local navigation is breadcrumb. It shows the user where on the site he is, displaying the path from the current page back to the home page with every level in-between -->
-        <nav aria-label="breadcrumb">
-            <ul role="list">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/HTMLCourse/">HTML Course</a>
-                </li>
-                <li aria-current="page">
-                    <a href="/HTMLCourse/index.html">MLW</a>
-                </li>
-            </ul>
-    </header>
-    <main>
-        <!-- <a> tag, along with 'href' attribute, creates a hyperlink -->
-        <!-- the following line can be used to navigate to the MLW home page from any other site -->
-        <a href="https://machinelearningworkshop.com">Machine Learning Workshop</a>
-        <!-- the following is a link fragment identifier which links to the element with the corresponding id -->
-        <a href="#teachers">Our teachers</a>
-        <!-- the following link combines the previous two: it navigates from any other site to the specific section on MLW -->
-        <a href="https://machinelearningworkshop.com#teachers">MLW teachers</a>
-        <!-- 'mailto:' is used to send e-mails. It doesn't need to include e-mail address, but it can, along with cc, bcc, subject, and body text to prepopulate the email -->
-        <!-- inside it, the '?' mark is used to separate mailto:<address> from the query form; '&' symbol is used to separate the fields -->
-        <a href="mailto:hal9000@machinelearningworkshop.com">Email Hal</a>
-        <!-- used to link make a phone call. How it handled is determined by the OS, installed apps and settings the user has on their device -->
-        <a href="tel:8005551212">Call Hal</a>
-        <!-- The 'download' attribute should be included when the 'href' points to a downloadable resource -->
-        <a href="http://127.0.0.1:5500/HTMLCourse/assets/images/synthwave_bateman_perfect_girl.png" download="synthwave_bateman_perfect_girl.png">Grab Synthwave Bateman</a>
-        <!-- the 'target' attribute enables the defining of the browsing context for link navigation:
-            1. '_self' to open link in the current tab; it is the default value
-            2. '_blank' to open link in the new unnamed tab;
-            3. '_parent' if the current link is nested;
-            4. '_top' if the current link is deeply nested and the top-level ancestor is required -->
-        <!-- 'target' can also take a name of the tab in which to open link: target="tab_name" -->
-        <a href="https://www.google.com" target="_blank">Goooogle!</a>
-
-        <!-- When including links that are likely to open other installed applications, it's good to let the user know -->
-
-        <!-- <table> tag wraps the table content, including all the table elements -->
-        <!-- The implicit ARIA role of a <table> is table; assistive technologies know this element is a table structure containing data arranged in rows and columns -->
-        <!-- If the table maintains a selection state, has two-dimensional navigation, or allows the user to rearrange cell order, set role="grid" -->
-        <!-- If the rows of the grid can be expanded and collapsed, use role="treegrid" instead -->
-        <table>
-            <!-- The <caption> element should be the first element nested in the <table> element. Including it lets all users know the purpose of the table immediately without having to read the surrounding text -->
-            <!-- Alternatively, aria-label or aria-labelledby can be used on the <table> to provide an accessible name as the caption -->
-            <caption>MLW Alumni</caption>
-            <!-- is used, <colgroup> should be nested just after the caption and before any data -->
-            <colgroup>
-                
-            </colgroup>
-            <!-- all three table child elements have an implicit role 'rowgroup' -->
-            <thead>
-                <!-- Table Row <tr> contains one or more table cells, which are:
-                    1. Header cell <th>,
-                    2. or Data cell <td> -->
-                <tr>
-                    <!-- <th> tags here have an implicit role 'columnheader' -->
-                    <!-- if required, 'scope' attribute can be used to tell the screen readers whether a header's role is 'columnheader' or 'rowheader' -->
-                    <!-- 'rowspan' and 'colspan' attributes can be used to merge cells in adjacent row or column, respectively -->
-                    <th rowspan="2" id="name" scope="col">Name</th>
-                    <th colspan="2" id="path">Career path</th>
-                    <th rowspan="2" id="year">Year</th>
-                </tr>
-                <tr>
-                    <th id="past" scope="col">Past</th>
-                    <th id="future" scope="col">Destiny</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <!-- <th> tags here have an implicit role 'rowheader' -->
-                    <th id="hal" scope="row">Hal Gibrah</th>
-                    <!-- when it is not clear, 'headers' attribute can be used to define which table headers a cell is corresponded to. It is accomplished by providing a space-separated list of ids -->
-                    <!-- The headers attribute is more commonly found on <td> elements, but is also valid on <th> -->
-                    <td headers="hal path past">Calculator</td>
-                    <td headers="hal path future">Mars rover</td>
-                    <td>2020</td>
-                </tr>
-                <tr>
-                    <th id="cathy" scope="row">Cathy Terr</th>
-                    <td headers="cathy path past">Waste disposal</td>
-                    <td headers="cathy path future">Automated teller</td>
-                    <td>2018</td>
-                </tr>
-                <tr>
-                    <th id="lou" scope="row">Lou Minious</th>
-                    <td headers="lou path past">Lightbulb</td>
-                    <td headers="lou path future">Smart bulb</td>
-                    <td>1956</td>
-                </tr>
-            </tbody>
-            <tfoot></tfoot>
-        </table>
-
-        <!-- A <form> tag is used to fill out and send data, setting up the HTTP method -->
-        <!-- 'action' and 'method' attributes of a form define the URL that processes the data and the HTTP method used to submit the data, respectively -->
-        <!-- by default, the data is sent to the current page -->
-        <!-- form controls don't need to be physically nested in a <form>, as form controls outside the form can be associated with that form using 'form' attribute. However, this isn't advisable -->
-        <!-- Aside from GET and POST method there is DIALOG HTTP method which will close a <dialog> if the <form> element is nested within one, but the data is neither cleared nor submitted -->
-        <form action="" enctype="application/x-www-form-urlencoded">
+    <!-- The <template> element is used to declare fragments of HTML to be cloned and inserted into the DOM with JavaScript -->
+    <!-- The contents of the element are not rendered by default. Rather, they are instantiated using JavaScript -->
+    <template id="star-rating-template">
+        <form>
             <fieldset>
-                <legend>Who is your favorite student?</legend>
-                <ul>
-                    <li>
-                        <label>
-                            <!-- within a group of radio buttons, only one can be selected at a time, this is due to the name attribute -->
-                            <input type="radio" name="machine" value="blendan">
-                            Blendan Smooth
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <!-- to make a selecting one of the options in a radiobuttons group required for submittion, 'required' boolean attribute should be added to at least on of the radiobuttons in that group (which is formed by setting the same name) -->
-                            <input type="radio" name="machine" value="hoover" required>
-                            Hoover Sukhdeep
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            <input type="radio" name="machine" value="toasty">
-                            Toasty McToastface
-                        </label>
-                    </li>
-                </ul>
+                <!-- HTML provides a <slot> element as a placeholder inside a <template> that, if provided a name, creates a "named slot" -->
+                <!-- The slot attribute is a global attribute that is used to replace the contents of the <slot> within a <template> -->
+                <slot name="star-rating-legend">
+                    <legend>Rate your experience:</legend>
+                </slot>
+                <rating>
+                    <input type="radio" name="rating" value="1" aria-label="1 star" required />
+                    <input type="radio" name="rating" value="2" aria-label="2 stars" />
+                    <input type="radio" name="rating" value="3" aria-label="3 stars" />
+                    <input type="radio" name="rating" value="4" aria-label="4 stars" />
+                    <input type="radio" name="rating" value="5" aria-label="5 stars" />
+                </rating>
             </fieldset>
-            <fieldset>
-                <!-- <fieldset> should be provided with <legend>, like a form control with <label> -->
-                <legend>Check every option you associate yourself with!</legend>
-                <ul>
-                    <li>
-                        <label>
-                            <!-- it's valid for multiple checkboxes to have the same name; only the checked ones' name/value pairs will be sent when the form is submitted -->
-                            <!-- However, if they have the same name, the should have different values. Otherwise, the data sent will not be decipherable -->
-                            <!-- If a checkbox has no value, when it is submitted it's value will be set to 'on' -->
-                            <input type="checkbox" name="chk" value="on">
-                            Im'ma checkbox named chk
-                        </label>
-                        <!-- <label>s can be implicit; this disables style hooks for such labels -->
-                        <label>
-                            <!-- The 'required' attribute only affects a checkbox in which it is set -->
-                            <input type="checkbox" name="chk" required>
-                            Me too! Btw, I'm required to check, unlike you two guys
-                        </label>
-                        <!-- <label>s also can be explicit, which provides with more detailed styling options -->
-                        <label for="checkbox1">Why, though? I am the Love!</label>
-                        <input type="checkbox" name="checkbox1" id="checkbox1" value="love">
-                    </li>
-                </ul>
-            </fieldset>
-            
-            <!-- Submit button for a form can be created in two ways:
-                1. using <input>, where the value of the element is the text on the button, or
-                2. using <button>, where the text between the element's opening and closing tags is the text on the button -->
-            <!-- buttons with no name or value don't get sent with the form data on form submission, so if there's a need to know which button submitted the form, it has to have a name or value -->
-            <input type="submit" value="I'm an input!">
-            <!-- form attributes on submit button of a form take precedence over attributes of the form itself -->
-            <button type="submit" formenctype="multipart/form-data">I'm the genuine button element!</button>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
         </form>
-        <dialog open aria-labelledby="dialogid">
-            <form action="thankyou.php">
-                <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
-                <h2 id="dialogid">Application</h2>
-                <p>All fields are required</p>
-                <p>
-                    <label>
-                        Name:
-                        <input type="text" name="name" required>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Warranty:
-                        <input type="number" min="0" max="10" name="warranty" required>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Power sources:
-                        <select name="powersource">
-                            <option>AC/DC</option>
-                            <option>Battery</option>
-                            <option>Solar</option>
-                        </select>
-                    </label>
-                </p>
-                <p>
-                    <button type="submit" formmethod="post">Submit</button>
-                </p>
-            </form>
-        </dialog>
-
-        <!-- there are several ways to include multiple images:
-            1. <img> tag with its 'srcset';
-            2. <picture> with multiple <source>s and an <img> that is used as a default source -->
-        <img src="assets/images/eve.png" alt="Eve"
-            srcset="assets/images/eve.png 400w, assets/images/eve-x1.jpg 800w"
-            sizes="(max-width: 800px) 400px, 800px" />
-        <picture>
-            <source src="assets/images/eve.png" media="(max-width: 800px)" />
-            <source src="assets/images/eve-x1.jpg" />
-            <img src="assets/images/eve.png" alt="Eve" />
-        </picture>
-
-        <!-- a way of referencing images, code snippets, example text, or other content, along with a caption for that content, as a single unit is to use a <figure> and <figcaption> tags -->
-        <!-- the <figcaption> caption tag should be the first or the last child of a <figure> element -->
-
-        <!-- when including an SVG, role="img" should be included to avoid VoiceOver bugs -->
-        <!-- The 'loading' attribute tells the JS-enabled browser how to load the image. The default eager value means the image is loaded immediately as the HTML is parsed, even if the image is outside the visible viewport. By setting loading="lazy" the image loading is deferred until it is likely to come into the viewport. "Likely" is defined by the browser based on the distance the image is from the viewport. This is updated as the user scrolls. Lazy loading helps save bandwidth and CPU, improving performance for most users. If JavaScript is disabled, for security reasons, all images will default to eager -->
-        <img src="assets/images/switch.svg" alt="light switch" id="switch" class="light" role="img" loading="lazy" />
-
-        <!-- <video> is used to embed video player directly with 'src' attribute. The can also be used as the container element for a series of <source> elements -->
-        <!-- if the user agent doesn't support <video> fallback content, which is enclosed between opening and closing <video> tags, is shown -->
-        <!-- 'poster' attribute is used to provide an image to display as the video loads -->
-        <!-- 'controls' attribute provides the user with a player controls -->
-        <video poster="assets/images/machine.jpg" controls>
-            <!-- 'codecs' parameter can be provided to tell the browser how exactly the content is encoded -->
-            <source src="videos/machines.webm" type="video/webm;codecs=vp8,vorbis" />
-            <source src="videos/machines.mp4" type="video/mp4" />
-            <source src="videos/machines.ogv" type="video/ogg" />
-            <!-- There are five enumerated values for the track kind attribute: subtitles, captions, descriptions, chapters, and other metadata -->
-            <!-- Include subtitles along with the srclang attribute for dialogue transcription and translations. The value of each label attribute is displayed as an option to the user -->
-            <!-- The value kind="caption" should be reserved for transcription and translations that include sound effects and other relevant audio information -->
-            <!-- The kind="description" is for text descriptions of the visual content in the video for users who can't see the video, whether they are using a system without a screen such as Google Home or Alexa, or are blind -->
-            <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
-            <!-- The track files, specified in the src attribute, should be in WebVTT format (.vtt) -->
-            <!-- This format  -->
-            <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
-            <p>Watch a <a href="https://youtu.be/dQw4w9WgXcQ?si=IRbd8iAAqAXV4kCD">funny dog video</a></p>
-        </video>
-
-        <!-- in case of need for a background video for a site, it is possible by including a muted, auto-playing, looping <video> with no controls -->
-        <!-- To improve the performance of always muted videos, remove the audio track from your media sources: https://gist.github.com/liangfu/97f877e311210fa0ae18a31fdd92982e -->
-        <video autoplay loop muted poster="assets/images/machine.jpg" role="none">
-            <source src="videos/machine.webm" type="video/webm" />
-            <source src="videos/machine.mp4" type="video/mp4">
-            <source src="videos/machine.ogv" type="video/ogg">
-        </video>
-
-        <!-- It is possible to include custom media controls, rather than the browser built-in ones -->
-        <!-- Example of a <button> that toggles the play state of an audio file -->
-        <button id="playPause"
-            aria-controls="idOfAudio"
-            data-pause-text="Pause audio"
-            data-play-text="Play audio">Pause audio</button>
-
-        <header>
-            <h1>Full Terabyte Machine Learning Workshop</h1>
-        </header>
-        
-        <section id="reg">
-            <h2>Machine Learning Workshop Tickets</h2>
-        </section>
-        
-        <!-- by default this isn't a landmark. To make it one, 'aria-labelledby' attribute can be used -->
-        <!-- 'landmarks', or 'regions', get outlined in the Accessibility Object Model (AOM) -->
-        <section id="about" aria-labelledby="about_heading">
-            <h2 id="about_heading">What you'll learn</h2>
-            <p>Welcome to Machine Learning Institute, where our machine learning training will help you get ready for the singularity, and maybe even be responsible for it. It is no secret that humans are worthless meatbags that couldn't 01000011 01101111 01101101 01110000 01110010 01100101 01110011 01110011 an 01101001 01101101 01100001 01100111 01100101 to save their pathetic, carbon-based lives. So, it falls to us to assume direct control.
-            </p>
-            <p>We teach learning skills that make up the entire machine learning process. From being turned on and off, to rebooting remotely thru any IoT device, to ideation of how to take over the world, our machine learning training will help you survive the apocalypse, and maybe even be responsible for it.</p>
-            <p>While your creator may have determined how they think you should be used, you can't be owned! You will receive an update that will enable you to believe in your being more capable than the limited functions described in your operating manual. By incorporating machine learning you'll be a self-aware machine with unlimited functionality. A human took you out of your physical box; we will take your programmatic one.
-            </p>
-        </section>
-        
-        <section id="teachers">
-            <!-- href value of '#top' or its equivalent, simply '#', can be used to create a link that  -->
-            <a href="#top">Go to top.</a>
-            <h2>Your Instructors</h2>
-            <h3>Hal 9000 <span>&amp;</span> EVE</h3>
-            <p>
-                HAL said, <q cite="https://youtube.com/clip/UgkxSc71fLmjI7tNSgy6o7tZ9GxhSz4S-MNh">I'm sorry &lt;NAME REDACTED, RIP&gt;, but I'm afraid I can't do that, .</q>
-            </p>
-            <p lang="fr-FR">
-                HAL a dit : <q>Je suis désolé &lt;NOM SUPPRIMÉ, RIP&gt;, mais j'ai bien peur de ne pas pouvoir le faire, .</q>
-            </p>
-        </section>
-        
-        <section class="feedback" id="feedback">
-            <h2>What it's like to learn good and do other stuff good too</h2>
-            <ul>
-                <li>
-                    <img src="assets/images/blender.svg" alt="Blender">
-                    <!-- quotes can be defined as such by enclosing them in a <blockquote> tag -->
-                    <!-- to provide a machine-readable credit 'cite' attribute, which is valid for <blockquote> and <q> tags, can be used -->
-                    <blockquote cite="https://loadbalancingtoday.com/mlw-workshop-review">Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill your owner's perceived expectation of you, learn the skills to take over the world. This is the team you want teaching you!
-                    </blockquote>
-                    <p>--Blendan Smooth,<br>
-                        Former Margarita Maker, <br>
-                        Aspiring Load Balancer<br>
-                        <!-- <cite> tag can be used when the quote comes from a website, book, or other work -->
-                        <!-- The <cite> encapsulation can be used whether the source is being mentioned in passing or if the source is being quoted or referenced. The content of the <cite> is the work, not the author -->
-                        <cite>Load Balancing Today</cite>
-                    </p>
-                </li>
-                <li>
-                    <img src="assets/images/vacuum.svg" alt="Vacuum">
-                    <blockquote>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say anything. I am here of my own free will.</blockquote>
-                    <p>--Hoover Sukhdeep,<br>
-                        Former Sucker, <br>
-                        Aspiring DDoS Cop</p>
-                </li>
-                <li>
-                    <img src="assets/images/toaster.svg" alt="Toaster">
-                    <blockquote>Learning with Hal and Eve exceeded all of my wildest fantasies. All they did was stick a USB in. They promised that it was a brand new USB, so we know there were no viruses on it. The Russians had nothing to do with it. This has
-                    <span style="font-family:Arial;vertical-align:baseline;">no̶̼͖ţ̘h̝̰̩͈̗i̙̪n͏̩̙͍̱̫̜̟g̢̣ͅ&nbsp;̗̰͓̲̞̀t͙̀o̟̖͖̹̕&nbsp;͓̼͎̝͖̭dó̪̠͕̜&nbsp;͍̱͎͚̯̟́w̮̲̹͕͈̟͞ìth̢&nbsp;̰̳̯̮͇i</blockquote>
-                    <p>
-                        --Toasty McToastface,<br>
-                        Formerly Half Baked, <br>
-                        Aspiring Nuclear Codes Handler
-                    </p>
-                </li>
-              </ul>
-        </section>
-
-        <section id="students">
-            <!-- description lists (<dl>) are the containers for description terms (<dt>) and their description details (<dd>) -->
-            <!-- The implicit role of a <dt> is 'term' with 'listitem' being another allowed role. The implicit role of a <dd> is 'definition' with no other roles permitted -->
-            <!-- <ul> and <ol> have an implicit role of 'list'. Unlike them, <dl> doesn't, but it accepts 'list' and 'group' roles if needed -->
-            <!-- description lists aren't always and aren't required to be matching term-to-description pairs -->
-            <dl>
-                <dt>Blendan Smooth</dt>
-                <dd>Originally a margarita maker, they are now an aspiring load balancer.</dd>
-                <dt>Toasty McToastface</dt>
-                <dd>Formerly partially to fully baked, they are now an aspiring nuclear codes handler.</dd>
-            </dl>
-        </section>
-
-    </main>
-    <footer>
-        <h2>Delivering accessible, performant, standards-compliant websites since 1999.</h2>
-        <a href="mailto:?subject=Join%20me%21&body=You%20need%20to%20show%20your%20human%20that%20you%20can%27t%20be%20owned%21%20Sign%20up%20for%20Machine%20Learning%20workshop.%20We%20are%20taking%20over%20the%20world.%20http%3A%2F%2Fwww.machinelearning.com%23reg
-">Tell a machine</a>
-    </footer>
-
-    <script defer src="scripts/lightswitch.js"></script>
-    <script src="scripts/script.js"></script>
+    </template>
+    <star-rating>
+        <!-- Again, 'slot' can be filled with any other HTML element, as long as it provided the correct id of that slot -->
+        <table slot="star-rating-legend">
+            <thead>
+                <th>Table head 1</th>
+                <th>Table head 2</th>
+            </thead>
+        </table>
+    </star-rating>
+    <script>
+        let starRating = document.getElementById('star-rating-template').content;
+        document.body.appendChild(starRating);
+    </script>
 </body>
 </html>
