@@ -55,17 +55,50 @@
 
     <!-- if alternate versions of the site exist, the 'true' one can be identified by using canonical value for rel attribute and providing a canonical URL for href-->
     <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Machine Learning Workshop</h1>
-        <nav>
-            <a href="#reg">Register</a>
-            <a href="#about">About</a>
-            <a href="#teachers">Instructors</a>
-            <a href="#feedback">Testimonials</a>
-            <a href="#students">Aspiring Robots</a>
+        <!-- This is a table of contents; the links are used to 'skip' to the desired section of the current page and to tell the user what is on this page -->
+        <!-- <nav> element has the 'navigation' landmark -->
+        <nav aria-labelledby="tocTitle">
+            <!-- visible text can be referenced to label an element. Visible text gets translated by translation services, whereas attributes may not -->
+            <p id="tocTitle">On this page</p>
+            <ul role="list">
+                <li>
+                    <a href="#reg">Register</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#teachers">Instructors</a>
+                </li>
+                <li>
+                    <a href="#feedback">Testimonials</a>
+                </li>
+                <li>
+                    <a href="#students">Aspiring Robots</a>
+                </li>
+            </ul>
         </nav>
+        <!-- another type of local navigation is breadcrumb. It shows the user where on the site he is, displaying the path from the current page back to the home page with every level in-between -->
+        <nav aria-label="breadcrumb">
+            <ul role="list">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/HTMLCourse/">HTML Course</a>
+                </li>
+                <li aria-current="page">
+                    <a href="/HTMLCourse/index.html">MLW</a>
+                </li>
+            </ul>
     </header>
     <main>
         <!-- <a> tag, along with 'href' attribute, creates a hyperlink -->
@@ -168,7 +201,7 @@
             <!-- description lists aren't always and aren't required to be matching term-to-description pairs -->
             <dl>
                 <dt>Blendan Smooth</dt>
-                <!-- <dd>Originally a margarita maker, they are now an aspiring load balancer.</dd> -->
+                <dd>Originally a margarita maker, they are now an aspiring load balancer.</dd>
                 <dt>Toasty McToastface</dt>
                 <dd>Formerly partially to fully baked, they are now an aspiring nuclear codes handler.</dd>
             </dl>
