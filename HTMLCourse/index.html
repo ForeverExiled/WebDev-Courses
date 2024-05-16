@@ -236,38 +236,7 @@
                     </li>
                 </ul>
             </fieldset>
-            <dialog open aria-labelledby="dialogid">
-                <form action="thankyou.php">
-                    <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
-                    <h2 id="dialogid">Application</h2>
-                    <p>All fields are required</p>
-                    <p>
-                        <label>
-                            Name:
-                            <input type="text" name="name" required>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Warranty:
-                            <input type="number" min="0" max="10" name="warranty" required>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            Power sources:
-                            <select name="powersource">
-                                <option>AC/DC</option>
-                                <option>Battery</option>
-                                <option>Solar</option>
-                            </select>
-                        </label>
-                    </p>
-                    <p>
-                        <button type="submit" formmethod="post">Submit</button>
-                    </p>
-                </form>
-            </dialog>
+            
             <!-- Submit button for a form can be created in two ways:
                 1. using <input>, where the value of the element is the text on the button, or
                 2. using <button>, where the text between the element's opening and closing tags is the text on the button -->
@@ -276,6 +245,38 @@
             <!-- form attributes on submit button of a form take precedence over attributes of the form itself -->
             <button type="submit" formenctype="multipart/form-data">I'm the genuine button element!</button>
         </form>
+        <dialog open aria-labelledby="dialogid">
+            <form action="thankyou.php">
+                <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
+                <h2 id="dialogid">Application</h2>
+                <p>All fields are required</p>
+                <p>
+                    <label>
+                        Name:
+                        <input type="text" name="name" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Warranty:
+                        <input type="number" min="0" max="10" name="warranty" required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Power sources:
+                        <select name="powersource">
+                            <option>AC/DC</option>
+                            <option>Battery</option>
+                            <option>Solar</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <button type="submit" formmethod="post">Submit</button>
+                </p>
+            </form>
+        </dialog>
 
         <header>
             <h1>Full Terabyte Machine Learning Workshop</h1>
