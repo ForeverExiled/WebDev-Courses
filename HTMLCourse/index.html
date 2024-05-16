@@ -57,8 +57,6 @@
     <link rel="canonical" href="http://127.0.0.1:5500/HTMLCourse">
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -297,6 +295,41 @@
         <!-- The 'loading' attribute tells the JS-enabled browser how to load the image. The default eager value means the image is loaded immediately as the HTML is parsed, even if the image is outside the visible viewport. By setting loading="lazy" the image loading is deferred until it is likely to come into the viewport. "Likely" is defined by the browser based on the distance the image is from the viewport. This is updated as the user scrolls. Lazy loading helps save bandwidth and CPU, improving performance for most users. If JavaScript is disabled, for security reasons, all images will default to eager -->
         <img src="assets/images/switch.svg" alt="light switch" id="switch" class="light" role="img" loading="lazy" />
 
+        <!-- <video> is used to embed video player directly with 'src' attribute. The can also be used as the container element for a series of <source> elements -->
+        <!-- if the user agent doesn't support <video> fallback content, which is enclosed between opening and closing <video> tags, is shown -->
+        <!-- 'poster' attribute is used to provide an image to display as the video loads -->
+        <!-- 'controls' attribute provides the user with a player controls -->
+        <video poster="assets/images/machine.jpg" controls>
+            <!-- 'codecs' parameter can be provided to tell the browser how exactly the content is encoded -->
+            <source src="videos/machines.webm" type="video/webm;codecs=vp8,vorbis" />
+            <source src="videos/machines.mp4" type="video/mp4" />
+            <source src="videos/machines.ogv" type="video/ogg" />
+            <!-- There are five enumerated values for the track kind attribute: subtitles, captions, descriptions, chapters, and other metadata -->
+            <!-- Include subtitles along with the srclang attribute for dialogue transcription and translations. The value of each label attribute is displayed as an option to the user -->
+            <!-- The value kind="caption" should be reserved for transcription and translations that include sound effects and other relevant audio information -->
+            <!-- The kind="description" is for text descriptions of the visual content in the video for users who can't see the video, whether they are using a system without a screen such as Google Home or Alexa, or are blind -->
+            <track label="English" kind="subtitles" srclang="en" src="vtt/subtitles-en.vtt" default />
+            <!-- The track files, specified in the src attribute, should be in WebVTT format (.vtt) -->
+            <!-- This format  -->
+            <track label="Francais" kind="subtitles" srclang="fr" src="vtt/subtitles-fr.vtt" />
+            <p>Watch a <a href="https://youtu.be/dQw4w9WgXcQ?si=IRbd8iAAqAXV4kCD">funny dog video</a></p>
+        </video>
+
+        <!-- in case of need for a background video for a site, it is possible by including a muted, auto-playing, looping <video> with no controls -->
+        <!-- To improve the performance of always muted videos, remove the audio track from your media sources: https://gist.github.com/liangfu/97f877e311210fa0ae18a31fdd92982e -->
+        <video autoplay loop muted poster="assets/images/machine.jpg" role="none">
+            <source src="videos/machine.webm" type="video/webm" />
+            <source src="videos/machine.mp4" type="video/mp4">
+            <source src="videos/machine.ogv" type="video/ogg">
+        </video>
+
+        <!-- It is possible to include custom media controls, rather than the browser built-in ones -->
+        <!-- Example of a <button> that toggles the play state of an audio file -->
+        <button id="playPause"
+            aria-controls="idOfAudio"
+            data-pause-text="Pause audio"
+            data-play-text="Play audio">Pause audio</button>
+
         <header>
             <h1>Full Terabyte Machine Learning Workshop</h1>
         </header>
@@ -387,5 +420,6 @@
     </footer>
 
     <script defer src="scripts/lightswitch.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
