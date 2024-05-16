@@ -125,6 +125,62 @@
 
         <!-- When including links that are likely to open other installed applications, it's good to let the user know -->
 
+        <!-- <table> tag wraps the table content, including all the table elements -->
+        <!-- The implicit ARIA role of a <table> is table; assistive technologies know this element is a table structure containing data arranged in rows and columns -->
+        <!-- If the table maintains a selection state, has two-dimensional navigation, or allows the user to rearrange cell order, set role="grid" -->
+        <!-- If the rows of the grid can be expanded and collapsed, use role="treegrid" instead -->
+        <table>
+            <!-- The <caption> element should be the first element nested in the <table> element. Including it lets all users know the purpose of the table immediately without having to read the surrounding text -->
+            <!-- Alternatively, aria-label or aria-labelledby can be used on the <table> to provide an accessible name as the caption -->
+            <caption>MLW Alumni</caption>
+            <!-- is used, <colgroup> should be nested just after the caption and before any data -->
+            <colgroup>
+                
+            </colgroup>
+            <!-- all three table child elements have an implicit role 'rowgroup' -->
+            <thead>
+                <!-- Table Row <tr> contains one or more table cells, which are:
+                    1. Header cell <th>,
+                    2. or Data cell <td> -->
+                <tr>
+                    <!-- <th> tags here have an implicit role 'columnheader' -->
+                    <!-- if required, 'scope' attribute can be used to tell the screen readers whether a header's role is 'columnheader' or 'rowheader' -->
+                    <!-- 'rowspan' and 'colspan' attributes can be used to merge cells in adjacent row or column, respectively -->
+                    <th rowspan="2" id="name" scope="col">Name</th>
+                    <th colspan="2" id="path">Career path</th>
+                    <th rowspan="2" id="year">Year</th>
+                </tr>
+                <tr>
+                    <th id="past" scope="col">Past</th>
+                    <th id="future" scope="col">Destiny</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- <th> tags here have an implicit role 'rowheader' -->
+                    <th id="hal" scope="row">Hal Gibrah</th>
+                    <!-- when it is not clear, 'headers' attribute can be used to define which table headers a cell is corresponded to. It is accomplished by providing a space-separated list of ids -->
+                    <!-- The headers attribute is more commonly found on <td> elements, but is also valid on <th> -->
+                    <td headers="hal path past">Calculator</td>
+                    <td headers="hal path future">Mars rover</td>
+                    <td>2020</td>
+                </tr>
+                <tr>
+                    <th id="cathy" scope="row">Cathy Terr</th>
+                    <td headers="cathy path past">Waste disposal</td>
+                    <td headers="cathy path future">Automated teller</td>
+                    <td>2018</td>
+                </tr>
+                <tr>
+                    <th id="lou" scope="row">Lou Minious</th>
+                    <td headers="lou path past">Lightbulb</td>
+                    <td headers="lou path future">Smart bulb</td>
+                    <td>1956</td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
         <header>
             <h1>Full Terabyte Machine Learning Workshop</h1>
         </header>

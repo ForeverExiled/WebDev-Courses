@@ -8,3 +8,8 @@
     rotate: 45deg;
     opacity: .8;
 }
+
+table,
+tr > * {
+  border: 1px solid;
+}
