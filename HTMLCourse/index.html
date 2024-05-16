@@ -278,6 +278,25 @@
             </form>
         </dialog>
 
+        <!-- there are several ways to include multiple images:
+            1. <img> tag with its 'srcset';
+            2. <picture> with multiple <source>s and an <img> that is used as a default source -->
+        <img src="assets/images/eve.png" alt="Eve"
+            srcset="assets/images/eve.png 400w, assets/images/eve-x1.jpg 800w"
+            sizes="(max-width: 800px) 400px, 800px" />
+        <picture>
+            <source src="assets/images/eve.png" media="(max-width: 800px)" />
+            <source src="assets/images/eve-x1.jpg" />
+            <img src="assets/images/eve.png" alt="Eve" />
+        </picture>
+
+        <!-- a way of referencing images, code snippets, example text, or other content, along with a caption for that content, as a single unit is to use a <figure> and <figcaption> tags -->
+        <!-- the <figcaption> caption tag should be the first or the last child of a <figure> element -->
+
+        <!-- when including an SVG, role="img" should be included to avoid VoiceOver bugs -->
+        <!-- The 'loading' attribute tells the JS-enabled browser how to load the image. The default eager value means the image is loaded immediately as the HTML is parsed, even if the image is outside the visible viewport. By setting loading="lazy" the image loading is deferred until it is likely to come into the viewport. "Likely" is defined by the browser based on the distance the image is from the viewport. This is updated as the user scrolls. Lazy loading helps save bandwidth and CPU, improving performance for most users. If JavaScript is disabled, for security reasons, all images will default to eager -->
+        <img src="assets/images/switch.svg" alt="light switch" id="switch" class="light" role="img" loading="lazy" />
+
         <header>
             <h1>Full Terabyte Machine Learning Workshop</h1>
         </header>
@@ -360,7 +379,6 @@
             </dl>
         </section>
 
-        <img src="assets/images/switch.svg" alt="light switch" id="switch" class="light">
     </main>
     <footer>
         <h2>Delivering accessible, performant, standards-compliant websites since 1999.</h2>
