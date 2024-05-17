@@ -54,9 +54,26 @@
                 color: #ccc;
                 content: '\2606'; /* hollow star! */
             }
+            :host(:not(#nonExistantId)) {
+                margin-bottom: 3em;
+                display: block;
+                color: rebeccapurple;
+            }
+            button { /* or just 'button' as it is encapsulated within <template> */
+                font-style: italic;
+            }
+            ::slotted(legend)::after {
+                content: " - matches '::slotted(legend)' from the shadow DOM";
+            }
         </style>
-        <form>
-            <fieldset>
+        <!-- It is possible to style the document from within a shadow DOM and to style the contents of a shadow DOM from the global styles -->
+        <!-- The ':host' pseudo-class selects the <star-rating>, the shadow host element. The shadow host is the DOM node that the shadow is attached to  -->
+        <!-- ':host()' can be used to select only the shadow host elements that match the parameter passed, lile a class or attribute selector -->
+        <!-- To select all the custom elements, 'star-rating {/* styles*/ }' is used in the global CSS, or :host(:not(#nonExistantId)) in the template styles -->
+        <!-- The 'part' attribute can be added to any elements, making it possible to style them -->
+        <!-- '::part()' pseudo-element is used to match elements within a shadow tree that match the parameter passed. The anchor for that is the value of the 'part' attribute -->
+        <form part="formPart">
+            <fieldset part="fieldsetPart">
                 <!-- HTML provides a <slot> element as a placeholder inside a <template> that, if provided a name, creates a "named slot" -->
                 <!-- The slot attribute is a global attribute that is used to replace the contents of the <slot> within a <template> -->
                 <slot name="star-rating-legend">
@@ -76,6 +93,7 @@
         </form>
     </template>
     <star-rating>
+        <!-- The ':slotted()' pseudo-element crosses the shadow DOM boundary from within the shadow DOM. it selects a slotted element if it matches the selector (e.g. ::slotted(legend) matches three <legend> elements here) -->
         <legend slot="star-rating-legend">Blendan Smooth</legend>
     </star-rating>
     <star-rating>
