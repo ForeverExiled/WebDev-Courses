@@ -22,6 +22,39 @@
     <!-- The <template> element is used to declare fragments of HTML to be cloned and inserted into the DOM with JavaScript -->
     <!-- The contents of the element are not rendered by default. Rather, they are instantiated using JavaScript -->
     <template id="star-rating-template">
+        <!-- encapsulated <style> element can be provided to apply styles to custom elements that are appended to the shadow DOM -->
+        <style>
+            rating {
+                display: inline-flex;
+            }
+            input {
+                appearance: none;
+                margin: 0;
+                box-shadow: none;
+            }
+            input::after {
+                content: '\2605';
+                font-size: 32px;
+            }
+            input:invalid::after {
+                color: #ddd;
+            }
+            rating:hover input:invalid::after,
+            rating:focus-within input:invalid::after{
+                color: #888;
+            }
+            rating:hover input:hover ~ input:invalid::after,
+            rating input:focus ~ input:invalid::after {
+                color: #ddd;
+            }
+            rating input:valid {
+                color: orange;
+            }
+            rating input:checked ~ input:not(:checked)::after {
+                color: #ccc;
+                content: '\2606'; /* hollow star! */
+            }
+        </style>
         <form>
             <fieldset>
                 <!-- HTML provides a <slot> element as a placeholder inside a <template> that, if provided a name, creates a "named slot" -->
@@ -43,17 +76,34 @@
         </form>
     </template>
     <star-rating>
-        <!-- Again, 'slot' can be filled with any other HTML element, as long as it provided the correct id of that slot -->
-        <table slot="star-rating-legend">
-            <thead>
-                <th>Table head 1</th>
-                <th>Table head 2</th>
-            </thead>
-        </table>
+        <legend slot="star-rating-legend">Blendan Smooth</legend>
+    </star-rating>
+    <star-rating>
+        <legend slot="star-rating-legend">Hoover Sukhdeep</legend>
+    </star-rating>
+    <star-rating>
+        <legend slot="star-rating-legend">Toasty McToastface</legend>
+        <p>Is this text visible?</p>
+    </star-rating>
+    <star-rating>
+        <!-- This example doesn't have content with a 'slot' attribute -->
+        <p>Is this text visible?</p>
     </star-rating>
     <script>
-        let starRating = document.getElementById('star-rating-template').content;
-        document.body.appendChild(starRating);
+        // now star-rating template element is defined by extending the HTMLElement
+        customElements.define('star-rating',
+            class extends HTMLElement {
+                constructor() {
+                    super(); // Always call super first in constructor
+                    const starRating = document.getElementById('star-rating-template').content;
+                    const shadowRoot = this.attachShadow({
+                        mode: "open"
+                    });
+                    // even though the elements is added to the DOM tree (but it's a shadow DOM tree) the elements, in this case radiobuttons, aren't styled, as CSS styles are scoped to the document, not to the shadow DOM
+                    shadowRoot.appendChild(starRating.cloneNode(true));
+                }
+            }
+        )
     </script>
 </body>
 </html>
